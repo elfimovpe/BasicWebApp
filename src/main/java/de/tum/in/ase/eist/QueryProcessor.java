@@ -22,9 +22,9 @@ public class QueryProcessor {
         } else if (query.contains("largest")){
             String str = query.replaceAll("[^-?0-9]+", " ");
             int maxValue = 0;
-            for (Integer integer : Arrays.asList(Integer.parseInt(String.valueOf(str.trim().split(" "))))) {
-                if (integer > maxValue)
-                    maxValue = integer;
+            for (int i = 0; i<Arrays.asList(str.trim().split(" ")).size(); i++) {
+                if (Integer.parseInt(Arrays.asList(str.trim().split(" ")).get(i)) > maxValue)
+                    maxValue = Integer.parseInt(Arrays.asList(str.trim().split(" ")).get(i));
             }
             return Integer.toString(maxValue);
         } else {
