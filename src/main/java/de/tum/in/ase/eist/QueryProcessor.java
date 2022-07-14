@@ -2,6 +2,8 @@ package de.tum.in.ase.eist;
 
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
+
 @Service
 public class QueryProcessor {
 
@@ -14,8 +16,9 @@ public class QueryProcessor {
         } else if (query.contains("name")) {
            return "Peter";
         } else if (query.contains("plus")){ // TODO extend the programm here
+            String str = query.replaceAll("[^-?0-9]+", " ");
 
-            return "4034";
+            return Arrays.asList(str.trim().split(" ")).get(0) + Arrays.asList(str.trim().split(" ")).get(1);
         } else {
             return "";
         }
