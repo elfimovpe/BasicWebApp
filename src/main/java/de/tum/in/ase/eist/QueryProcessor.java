@@ -23,7 +23,12 @@ public class QueryProcessor {
             String str = query.replaceAll("[^-?0-9]+", " ");
             int number1 = Integer.parseInt(Arrays.asList(str.trim().split(" ")).get(0));
             int number2 = Integer.parseInt(Arrays.asList(str.trim().split(" ")).get(0));
+            if (number1>number2) {
+                return Integer.toString(number1);
+            }
 
+            return Integer.toString(number2);
+        } else {
             return "";
         }
     }
