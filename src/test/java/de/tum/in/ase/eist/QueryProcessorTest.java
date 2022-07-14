@@ -30,4 +30,14 @@ class QueryProcessorTest {
 		}
 	}
 
+	@Test
+	void test2() {
+		assertEquals("510", queryProcessor.process("500 plus 10"));
+	}
+
+	@Test
+	void test3() {
+		assertEquals("1011", queryProcessor.process("largest 300 30 50 1010 1011 600 0 555"));
+	}
 }
+

@@ -21,13 +21,12 @@ public class QueryProcessor {
             return Integer.toString(Integer.parseInt(Arrays.asList(str.trim().split(" ")).get(0)) + Integer.parseInt(Arrays.asList(str.trim().split(" ")).get(1)));
         } else if (query.contains("largest")){
             String str = query.replaceAll("[^-?0-9]+", " ");
-            int number1 = Integer.parseInt(Arrays.asList(str.trim().split(" ")).get(0));
-            int number2 = Integer.parseInt(Arrays.asList(str.trim().split(" ")).get(0));
-            if (number1>number2) {
-                return Integer.toString(number1);
+            int maxValue = 0;
+            for (Integer integer : Arrays.asList(Integer.parseInt(String.valueOf(str.trim().split(" "))))) {
+                if (integer > maxValue)
+                    maxValue = integer;
             }
-
-            return Integer.toString(number2);
+            return Integer.toString(maxValue);
         } else {
             return "";
         }
