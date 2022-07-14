@@ -15,11 +15,15 @@ public class QueryProcessor {
                     "writer in the English language and the world's pre-eminent dramatist.";
         } else if (query.contains("name")) {
            return "Peter";
-        } else if (query.contains("plus")){ // TODO extend the programm here
+        } else if (query.contains("plus")){
             String str = query.replaceAll("[^-?0-9]+", " ");
 
-            return Arrays.asList(str.trim().split(" ")).get(0) + Arrays.asList(str.trim().split(" ")).get(1);
-        } else {
+            return Integer.toString(Integer.parseInt(Arrays.asList(str.trim().split(" ")).get(0)) + Integer.parseInt(Arrays.asList(str.trim().split(" ")).get(1)));
+        } else if (query.contains("largest")){
+            String str = query.replaceAll("[^-?0-9]+", " ");
+            int number1 = Integer.parseInt(Arrays.asList(str.trim().split(" ")).get(0));
+            int number2 = Integer.parseInt(Arrays.asList(str.trim().split(" ")).get(0));
+
             return "";
         }
     }
